@@ -71,6 +71,11 @@ function blob_fixup() {
     system/lib64/libimsmedia_jni.so)
         "${PATCHELF}" --add-needed "lib-imsvtshim.so" "${2}"
         ;;
+    # Use VNDK 32 libhidlbase
+    vendor/lib64/com.quicinc.cne.api@1.0.so)
+        "${PATCHELF_0_8}" --remove-needed "libhidlbase.so" "${2}"
+        sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
+    ;;
     esac
 }
 

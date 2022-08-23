@@ -20,7 +20,7 @@ PRODUCT_MAKEFILES := \
 
 
 COMMON_LUNCH_CHOICES := \
-    aosp_walleye-userdebug
+    aosp_walleye-userdebug \
     arrow_walleye-eng \
     arrow_walleye-user \
     arrow_walleye-userdebug
